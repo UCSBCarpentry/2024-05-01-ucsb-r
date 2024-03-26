@@ -9,11 +9,11 @@ country: "us"      # lowercase two-letter ISO country code such as "fr" (see htt
 language: "en"     # lowercase two-letter ISO language code such as "fr" (see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) for the workshop
 latitude: 34.413958        # decimal latitude of workshop venue (use https://www.latlong.net/)
 longitude: -119.845491       # decimal longitude of the workshop venue (use https://www.latlong.net)
-humandate: "Oct 11, 2022"    # human-readable dates for the workshop (e.g., "Feb 17-18, 2020")
-humantime: "9:30 am - 11:30 am PST"    # human-readable times for the workshop e.g., "9:00 am - 4:30 pm CEST (7:00 am - 2:30 pm UTC)"
-startdate: 2022-10-18      # machine-readable start date for the workshop in YYYY-MM-DD format like 2015-01-01
-enddate: 2022-10-19        # machine-readable end date for the workshop in YYYY-MM-DD format like 2015-01-02
-instructor: ["Seth Erickson","Kristi Liu", "Jon Jablonski", "Renata Curty", "Greg Janée", "Ryan Horn"] # boxed, comma-separated list of instructors' names as strings, like ["Kay McNulty", "Betty Jennings", "Betty Snyder"]
+humandate: "May 1-2, 2024"    # human-readable dates for the workshop (e.g., "Feb 17-18, 2020")
+humantime: "1:00 pm - 5:oo pm PST"    # human-readable times for the workshop e.g., "9:00 am - 4:30 pm CEST (7:00 am - 2:30 pm UTC)"
+startdate: 2024-05-01      # machine-readable start date for the workshop in YYYY-MM-DD format like 2015-01-01
+enddate: 2024-05-02        # machine-readable end date for the workshop in YYYY-MM-DD format like 2015-01-02
+instructor: ["Seth Erickson","Kristi Liu", "Jon Jablonski"] # boxed, comma-separated list of instructors' names as strings, like ["Kay McNulty", "Betty Jennings", "Betty Snyder"]
 helper: ["Helper"]     # boxed, comma-separated list of helpers' names, like ["Marlyn Wescoff", "Fran Bilas", "Ruth Lichterman"]
 email: ["dreamlab@library.ucsb.edu"]    # boxed, comma-separated list of contact email addresses for the host, lead instructor, or whoever else is handling questions, like ["marlyn.wescoff@example.org", "fran.bilas@example.org", "ruth.lichterman@example.org"]
 collaborative_notes:  # optional: URL for the workshop collaborative notes, e.g. an Etherpad or Google Docs document (e.g., https://pad.carpentries.org/2015-01-01-euphoria)
