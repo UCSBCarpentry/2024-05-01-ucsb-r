@@ -1,11 +1,69 @@
+
+# Pre-Workshop Setup
+
 {% assign curricula = "swc-gapminder|swc-inflammation"  | split: "|" %}
 {% unless curricula contains site.curriculum %}
 {% include warning-curriculum.html %}
 {% endunless %}
 
+For this workshop, you have the option of using the Jupyter Hub Instance to use Rstudio. If you would like to install the software on your own device, you
+will need to access software and data as described below: 
+
+* Gapminder Dataset
+* R (version 4.2.1 or greater)
+* Rstudio (version 2022.7 or greater)
+* Tidyverse Package
+
+Scroll past the Jupyter Hub to view the Data download and R/Rstudio installation instructions. 
+
+
+> ## Logging into the RStudio Jupyter Hub Instance
+> 
+For this workshop, we will be using a Jupyter Hub Instance that LSIT has graciously setup for us with the software and packages preinstalled. <br>
+Please use your UCSB NETID to sign into the Jupyter Hub at: [https://carpentryworkshop.lsit.ucsb.edu/](https://carpentryworkshop.lsit.ucsb.edu/) 
+Once you have signed in, click the RStudio Launcher button.
+**You do not need to follow the setup instructions below if you plan on using the Jupyter Hub Interface rather than RStudio on your own computer**
+{: .prereq}
+<br>
+![jupyter-instance](fig/setup-jupyter-instance.png)
+<br>
+
+## Data Download
+
+Download the data from https://raw.githubusercontent.com/swcarpentry/r-novice-gapminder/gh-pages/_episodes_rmd/data/gapminder_data.csv
+
+Save this file as: **gapminder_data.csv** in an easily accessible place, like your Desktop
+
+To download it directly into your Rstudio Environment: 
+
+~~~
+download.file("https://raw.githubusercontent.com/swcarpentry/r-novice-gapminder/gh-pages/_episodes_rmd/data/gapminder_data.csv", destfile = "data/gapminder_data.csv")
+gapminder <- read.csv("data/gapminder_data.csv", stringsAsFactors = TRUE)
+~~~
+{: .language-r}
+
+## Install R and RStudio
+R and RStudio are two separate pieces of software:
+
+R is a programming language that is especially powerful for data exploration, visualization, and statistical analysis
+RStudio is an integrated development environment (IDE) that makes using R easier. In this course we use RStudio to interact with R.
+If you don’t already have R and RStudio installed, follow the instructions for your operating system below. You have to install R before you install RStudio.
+
+
+## Update R and RStudio
+If you already have R and RStudio installed, first check if your R version is up to date:
+
+When you open RStudio your R version will be printed in the console on the bottom left. Alternatively, you can type sessionInfo() into the console. If your R version is 4.2.1 or later, you don’t need to update R for this lesson. If your version of R is older than that, download and install the latest version of R from the R project website for Windows, for MacOS, or for Linux
+It is not necessary to remove old versions of R from your system, but if you wish to do so you can check How do I uninstall R?
+Note: The changes introduced by new R versions are usually backwards-compatible. That is, your old code should still work after updating your R version. However, if breaking changes happen, it is useful to know that you can have multiple versions of R installed in parallel and that you can switch between them in RStudio by going to Tools > Global Options > General > Basic.
+After installing a new version of R, you will have to reinstall all your packages with the new version. For Windows, there is a package called installr that can help you with upgrading your R version and migrate your package library.
+To update RStudio to the latest version, open RStudio and click on Help > Check for Updates. If a new version is available follow the instruction on screen. By default, RStudio will also automatically notify you of new versions every once in a while.
+
+<!--
 {% include install_instructions/shell.html %}
 {% include install_instructions/git.html %}
 {% include install_instructions/editor.html %}
+--> 
 
 {% if site.flavor == "r" %}
 {% include install_instructions/r.html %}
@@ -18,6 +76,28 @@
 {% include warning-flavor.html %}
 {% endif %}
 
+## Install required R packages
+During the course we will need a number of R packages. Packages contain useful R code written by other people. We will use the packages tidyverse, hexbin, patchwork, and RSQLite.
+
+To try to install these packages, open RStudio and copy and paste the following command into the console window (look for a blinking cursor on the bottom left), then press the Enter (Windows and Linux) or Return (MacOS) to execute the command.
+
+~~~
+install.packages("tidyverse")
+~~~
+{: .language-r}
+
+Alternatively, you can install the packages using RStudio’s graphical user interface by going to Tools > Install Packages and typing the names of the packages separated by a comma.
+
+R tries to download and install the packages on your machine. When the installation has finished, you can try to load the packages by pasting the following code into the console:
+~~~
+library(tidyverse)
+~~~
+{: .language-r}
+
+If you do not see an error like there is no package called ‘...’ you are good to go!
+
+
+
 {% comment %}
 The following setup instructions are commented out because Carpentries workshops
 cover the these topics less frequently. Please uncomment the lines that
@@ -26,3 +106,4 @@ correspond to the topics covered in your workshop.
 {% include install_instructions/sql.html %}
 {% include install_instructions/openrefine.html %}
 {% endcomment %}
+
